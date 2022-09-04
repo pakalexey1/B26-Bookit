@@ -64,6 +64,16 @@ public class DBUtils {
     /**
      *
      * @param query
+     * @return returns a single cell value from the top row. The int parameter
+     *         indicates a column number from where the value should be picked up
+     */
+    public static Object getCustomCellValue(String query, int columnNum) {
+        return getQueryResultList(query).get(0).get(columnNum);
+    }
+
+    /**
+     *
+     * @param query
      * @return returns a list of Strings which represent a row of data. If the query
      *         results in multiple rows and/or columns of data, only first row will
      *         be returned. The rest of the data will be ignored
